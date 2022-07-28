@@ -10,6 +10,8 @@ import PersonNameModel from "./model/PersonNameModel";
 import StatusModel from "./model/StatusModel";
 import { useDarkMode } from "./context/DarkModeContext";
 import Box from "./context/Box";
+import DomRef from "./ref/DomRef";
+import MutableRef from "./ref/MutableRef";
 const App: React.FunctionComponent = () => {
   const personNames: PersonNameModel[] = [
     {
@@ -59,6 +61,8 @@ const App: React.FunctionComponent = () => {
       >
         Change theme
       </button>
+      <DomRef />
+      <MutableRef />
     </div>
   );
 };
