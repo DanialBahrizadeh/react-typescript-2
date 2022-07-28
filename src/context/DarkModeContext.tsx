@@ -1,15 +1,14 @@
 import React, { createContext, useContext, useState } from "react";
 
-const DarkModeContext = createContext(false);
+interface DarkModeContextModel {
+  darkMode: boolean;
+  toggleDarkMode: () => void;
+}
 
-const SetDarkModeContext = createContext<() => void>(() => {});
+const DarkModeContext = createContext<DarkModeContextModel | null>(null);
 
 export const useDarkMode = () => {
   return useContext(DarkModeContext);
-};
-
-export const useSetDarkModeContext = () => {
-  return useContext(SetDarkModeContext);
 };
 
 interface DarkModeContextProviderProps {
@@ -25,10 +24,8 @@ const DarkModeContextProvider: React.FunctionComponent<
     setDarkMode((prevStete) => !prevStete);
   };
   return (
-    <DarkModeContext.Provider value={darkMode}>
-      <SetDarkModeContext.Provider value={toggleDarkMode}>
-        {children}
-      </SetDarkModeContext.Provider>
+    <DarkModeContext.Provider value={{ darkMode, toggleDarkMode }}>
+      {children}
     </DarkModeContext.Provider>
   );
 };

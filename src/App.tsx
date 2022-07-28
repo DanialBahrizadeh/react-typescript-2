@@ -8,7 +8,7 @@ import PersonList from "./components/PersonList";
 import Status from "./components/Status";
 import PersonNameModel from "./model/PersonNameModel";
 import StatusModel from "./model/StatusModel";
-import { useDarkMode, useSetDarkModeContext } from "./context/DarkModeContext";
+import { useDarkMode } from "./context/DarkModeContext";
 import Box from "./context/Box";
 const App: React.FunctionComponent = () => {
   const personNames: PersonNameModel[] = [
@@ -35,9 +35,10 @@ const App: React.FunctionComponent = () => {
   };
 
   const [isLogin, setIsLogin] = useState<boolean>(false);
-  const toggleDarkMode = useSetDarkModeContext();
+
+  const darkMode = useDarkMode();
   return (
-    <div className={useDarkMode() ? "dark" : "light"}>
+    <div className={darkMode?.darkMode ? "dark" : "light"}>
       <Greet name="Danial" messageCount={10} isLogged={true} />
       <PersonList personNames={personNames} />
       <Status status={status} />
@@ -53,7 +54,7 @@ const App: React.FunctionComponent = () => {
       <Box />
       <button
         type="button"
-        onClick={toggleDarkMode}
+        onClick={darkMode?.toggleDarkMode}
         className="dark:bg-violet-700 dark:text-rose-300 bg-cyan-500 text-emerald-700 rounded-lg px-3 py-1 ml-5 my-3"
       >
         Change theme
