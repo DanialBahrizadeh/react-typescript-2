@@ -15,6 +15,7 @@ import MutableRef from "./ref/MutableRef";
 import CounterClass from "./components/class/CounterClass";
 import Private from "./components/auth/Private";
 import Profile from "./components/auth/Profile";
+import List from "./components/generics/List";
 const App: React.FunctionComponent = () => {
   const personNames: PersonNameModel[] = [
     {
@@ -42,6 +43,20 @@ const App: React.FunctionComponent = () => {
   const [isLogin, setIsLogin] = useState<boolean>(false);
 
   const darkMode = useDarkMode();
+  const items = [
+    {
+      id: 1,
+      value: "Danial",
+    },
+    {
+      id: 2,
+      value: "Mostafa",
+    },
+    {
+      id: 3,
+      value: "Ali",
+    },
+  ];
   return (
     <div className={darkMode.darkMode ? "dark" : "light"}>
       <Greet name="Danial" messageCount={10} isLogged={true} />
@@ -68,6 +83,7 @@ const App: React.FunctionComponent = () => {
       <MutableRef />
       <CounterClass message="The coutn value is " />
       <Private isLogged={true} Component={Profile} />
+      <List items={items} onClick={(item) => console.log(item)} />
     </div>
   );
 };
