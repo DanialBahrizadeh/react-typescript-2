@@ -38,7 +38,7 @@ const App: React.FunctionComponent = () => {
 
   const darkMode = useDarkMode();
   return (
-    <div className={darkMode?.darkMode ? "dark" : "light"}>
+    <div className={darkMode.darkMode ? "dark" : "light"}>
       <Greet name="Danial" messageCount={10} isLogged={true} />
       <PersonList personNames={personNames} />
       <Status status={status} />
@@ -54,7 +54,7 @@ const App: React.FunctionComponent = () => {
       <Box />
       <button
         type="button"
-        onClick={darkMode?.toggleDarkMode}
+        onClick={darkMode.toggleDarkMode}
         className="dark:bg-violet-700 dark:text-rose-300 bg-cyan-500 text-emerald-700 rounded-lg px-3 py-1 ml-5 my-3"
       >
         Change theme

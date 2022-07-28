@@ -5,7 +5,7 @@ interface DarkModeContextModel {
   toggleDarkMode: () => void;
 }
 
-const DarkModeContext = createContext<DarkModeContextModel | null>(null);
+const DarkModeContext = createContext({} as DarkModeContextModel);
 
 export const useDarkMode = () => {
   return useContext(DarkModeContext);
