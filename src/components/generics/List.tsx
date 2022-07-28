@@ -4,7 +4,7 @@ export interface ListProps<T> {
 }
 
 const List = <T extends { id: number; value: string }>(props: ListProps<T>) => {
-  const itemsElements = props.items.map((item, index) => {
+  const itemsElements = props.items.map((item) => {
     return (
       <div
         key={item.id}
