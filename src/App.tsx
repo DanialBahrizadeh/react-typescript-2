@@ -12,6 +12,9 @@ import { useDarkMode } from "./context/DarkModeContext";
 import Box from "./context/Box";
 import DomRef from "./ref/DomRef";
 import MutableRef from "./ref/MutableRef";
+import CounterClass from "./components/class/CounterClass";
+import Private from "./components/auth/Private";
+import Profile from "./components/auth/Profile";
 const App: React.FunctionComponent = () => {
   const personNames: PersonNameModel[] = [
     {
@@ -63,6 +66,8 @@ const App: React.FunctionComponent = () => {
       </button>
       <DomRef />
       <MutableRef />
+      <CounterClass message="The coutn value is " />
+      <Private isLogged={true} Component={Profile} />
     </div>
   );
 };
