@@ -16,6 +16,7 @@ import CounterClass from "./components/class/CounterClass";
 import Private from "./components/auth/Private";
 import Profile from "./components/auth/Profile";
 import List from "./components/generics/List";
+import RandomNumber from "./components/restriction/RandomNumber";
 const App: React.FunctionComponent = () => {
   const personNames: PersonNameModel[] = [
     {
@@ -84,6 +85,7 @@ const App: React.FunctionComponent = () => {
       <CounterClass message="The coutn value is " />
       <Private isLogged={true} Component={Profile} />
       <List items={items} onClick={(item) => console.log(item)} />
+      <RandomNumber value={10} isPositive />
     </div>
   );
 };
