@@ -21,6 +21,7 @@ import Toast from "./components/templateliterals/Toast";
 import CustomButton from "./components/html/Button";
 import CustomInput from "./components/html/Input";
 import CustomComponent from "./components/html/CustomComponent";
+import Text from "./components/polymorphic/Text";
 const App: React.FunctionComponent = () => {
   const personNames: PersonNameModel[] = [
     {
@@ -96,6 +97,15 @@ const App: React.FunctionComponent = () => {
       </CustomButton>
       <CustomInput type="text" />
       <CustomComponent name="Danial" isLogged />
+      <Text as="h1" size="lg">
+        Heading
+      </Text>
+      <Text as="p" size="md">
+        Paragraph
+      </Text>
+      <Text as="label" htmlFor="someId" size="sm">
+        Label
+      </Text>
     </div>
   );
 };
