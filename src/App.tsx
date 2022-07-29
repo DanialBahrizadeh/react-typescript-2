@@ -18,6 +18,8 @@ import Profile from "./components/auth/Profile";
 import List from "./components/generics/List";
 import RandomNumber from "./components/restriction/RandomNumber";
 import Toast from "./components/templateliterals/Toast";
+import CustomButton from "./components/html/Button";
+import CustomInput from "./components/html/Input";
 const App: React.FunctionComponent = () => {
   const personNames: PersonNameModel[] = [
     {
@@ -88,6 +90,10 @@ const App: React.FunctionComponent = () => {
       <List items={items} onClick={(item) => console.log(item)} />
       <RandomNumber value={10} isPositive />
       <Toast position="top-left" />
+      <CustomButton variant="primary" onClick={() => console.log("clickd")}>
+        Primary Button
+      </CustomButton>
+      <CustomInput type="text" />
     </div>
   );
 };
