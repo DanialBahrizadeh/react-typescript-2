@@ -20,6 +20,7 @@ import RandomNumber from "./components/restriction/RandomNumber";
 import Toast from "./components/templateliterals/Toast";
 import CustomButton from "./components/html/Button";
 import CustomInput from "./components/html/Input";
+import CustomComponent from "./components/html/CustomComponent";
 const App: React.FunctionComponent = () => {
   const personNames: PersonNameModel[] = [
     {
@@ -94,6 +95,7 @@ const App: React.FunctionComponent = () => {
         Primary Button
       </CustomButton>
       <CustomInput type="text" />
+      <CustomComponent name="Danial" isLogged />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 interface GreetProps {
   name: string;
-  messageCount: number;
+  messageCount?: number;
   isLogged: boolean;
 }
 
